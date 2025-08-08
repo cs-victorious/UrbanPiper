@@ -1,4 +1,3 @@
-<script>
 const redirectRules = {
     'uk': { prefix: '/uk', exceptions: ['about-us', 'contact-us', 'customer-stories'] },
     'us': { prefix: '/us', exceptions: ['about-us', 'contact-us', 'customer-stories'] },
@@ -349,4 +348,3 @@ $(document).ready(function() {
         }
     });
 });
-</script>
