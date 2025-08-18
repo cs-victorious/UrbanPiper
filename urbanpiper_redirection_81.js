@@ -196,7 +196,7 @@ function RedirectbyLoc(source = '', country = '', lang = ''){
             document.querySelectorAll('.nav-dd.products')[0].remove();
         }
         if(loc == 'ae' || loc == 'kw' || loc == 'qa' || loc == 'bh' || loc == 'eg' || loc == 'sa'){
-            document.querySelectorAll('.nav-dd.products')[0].remove();
+            //document.querySelectorAll('.nav-dd.products')[0].remove();
         }
         var toUrl = backlink != '' ? '/'+backlink : '/';
         if(url.pathname.replace(/(https?:\/\/)|(\/)+/g, "$1$2") != toUrl){ window.location.href = toUrl; }
@@ -347,7 +347,7 @@ function RedirectbyLoc(source = '', country = '', lang = ''){
         //     toUrl = '/us'+(backlink != '' ? '/'+backlink : backlink); 
         // }
         else if(loc == 'ae'){ 
-            document.querySelectorAll('.nav-dd.products')[0].remove();
+           // document.querySelectorAll('.nav-dd.products')[0].remove();
             if(backlink == 'about-us' || backlink == 'contact-us' || backlink == 'customer-stories'){
                 toUrl = '/' + backlink;
             }
@@ -356,7 +356,7 @@ function RedirectbyLoc(source = '', country = '', lang = ''){
             }
         }
         else if(loc == 'ar-ae'){         
-            document.querySelectorAll('.nav-dd.products')[0].remove();    
+           // document.querySelectorAll('.nav-dd.products')[0].remove();    
             if(backlink == 'about-us' || backlink == 'contact-us' || backlink == 'customer-stories'){
                 toUrl = '/' + backlink;
             }
@@ -374,7 +374,7 @@ function RedirectbyLoc(source = '', country = '', lang = ''){
             }
         }
         else if(loc == 'ar'){ 
-            document.querySelectorAll('.nav-dd.products')[0].remove();
+           // document.querySelectorAll('.nav-dd.products')[0].remove();
             if(backlink == 'about-us' || backlink == 'contact-us' || backlink == 'customer-stories'){
                 toUrl = '/' + backlink;
             }
@@ -383,7 +383,7 @@ function RedirectbyLoc(source = '', country = '', lang = ''){
             }
         }        
         else if(loc == 'kw'){ 
-            document.querySelectorAll('.nav-dd.products')[0].remove();
+          //  document.querySelectorAll('.nav-dd.products')[0].remove();
             if(backlink == 'about-us' || backlink == 'contact-us' || backlink == 'customer-stories'){
                 toUrl = '/' + backlink;
             }
@@ -392,7 +392,7 @@ function RedirectbyLoc(source = '', country = '', lang = ''){
             }
         }
         else if(loc == 'qa'){ 
-            document.querySelectorAll('.nav-dd.products')[0].remove();
+          //  document.querySelectorAll('.nav-dd.products')[0].remove();
             if(backlink == 'about-us' || backlink == 'contact-us' || backlink == 'customer-stories'){
                 toUrl = '/' + backlink;
             }
@@ -401,7 +401,7 @@ function RedirectbyLoc(source = '', country = '', lang = ''){
             } 
         }
         else if(loc == 'bh'){     
-            document.querySelectorAll('.nav-dd.products')[0].remove();       
+           // document.querySelectorAll('.nav-dd.products')[0].remove();       
             if(backlink == 'about-us' || backlink == 'contact-us' || backlink == 'customer-stories'){
                 toUrl = '/' + backlink;
             }
@@ -410,7 +410,7 @@ function RedirectbyLoc(source = '', country = '', lang = ''){
             }
         }
         else if(loc == 'eg'){ 
-            document.querySelectorAll('.nav-dd.products')[0].remove();
+           // document.querySelectorAll('.nav-dd.products')[0].remove();
             if(backlink == 'about-us' || backlink == 'contact-us' || backlink == 'customer-stories'){
                 toUrl = '/' + backlink;
             }
@@ -1011,4 +1011,5 @@ $(document).ready(function(){
             $(".language-picker-main.mobile").hide();
         }
 	});
+
 });
