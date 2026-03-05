@@ -45,7 +45,7 @@ if(url.href.includes('utm_') || url.href.includes('urbanpipervscompetidores') ||
         //no redirection
 } 
 else{
-    if(run_redirect){
+    if(run_redirect && window.location.pathname === "/"){
         var source = getWithExpiry("source") ? getWithExpiry('source') : '';
         var country = getWithExpiry('country') ? getWithExpiry('country') : '';
         var lang = getWithExpiry('lang') ? getWithExpiry('lang') : '';
