@@ -812,128 +812,19 @@ jQuery(document).ready(function($){
     }
 });
 
+...
+function link_is_external(link_element) {
+    return (link_element.host !== window.location.host);
+}
+
+});
+
 /* ================================
-   LANGUAGE PICKER FIXED VERSION
+   LANGUAGE PICKER — FINAL STABLE VERSION
    ================================ */
 
 $(document).ready(function(){
 
-const desktopPicker = document.querySelector(".language-picker-main.desktop");
-const mobilePicker = document.querySelector(".language-picker-main.mobile");
-const desktopBtn = document.querySelector("#lang-selection-desktop");
-const mobileBtn = document.querySelector("#lang-selection-mobile");
-
-/* ---------------------------
-TOGGLE LANGUAGE DROPDOWN
---------------------------- */
-
-if(desktopBtn){
-desktopBtn.addEventListener("click", function(e){
-e.stopPropagation();
-desktopPicker.classList.toggle("active");
-});
-}
-
-if(mobileBtn){
-mobileBtn.addEventListener("click", function(e){
-e.stopPropagation();
-mobilePicker.classList.toggle("active");
-});
-}
-
-/* ---------------------------
-CLICK OUTSIDE CLOSE
---------------------------- */
-
-document.addEventListener("click", function(e){
-
-if(desktopPicker && !desktopPicker.contains(e.target) && !desktopBtn.contains(e.target)){
-desktopPicker.classList.remove("active");
-}
-
-if(mobilePicker && !mobilePicker.contains(e.target) && !mobileBtn.contains(e.target)){
-mobilePicker.classList.remove("active");
-}
-
-});
-
-
-/* ---------------------------
-LANGUAGE SELECTION
---------------------------- */
-
-document.querySelectorAll(".language-picker-list li, .language-picker-list-ae li, .language-picker-list-sa li, .language-picker-list-es li, .language-picker-list-kw li, .language-picker-list-qa li, .language-picker-list-bh li, .language-picker-list-eg li")
-.forEach(function(el){
-
-el.addEventListener("click", function(){
-
-const country = this.getAttribute("country");
-const lang = this.getAttribute("lang");
-
-/* update navbar flag */
-
-const flagElement = document.querySelector(".lpl-c-"+country);
-
-if(flagElement){
-
-let img_src = window.getComputedStyle(flagElement,":before").content;
-
-img_src = img_src.replace(/\"/g,"");
-
-document.querySelectorAll(".language-block img")
-.forEach(img => img.src = img_src);
-
-}
-
-/* update language text */
-
-document.querySelectorAll(".language-picker-title")
-.forEach(el => el.innerText = lang.toUpperCase());
-
-/* store selection */
-
-localStorage.setItem("source","drpdwn");
-localStorage.setItem("country",country);
-localStorage.setItem("lang",lang);
-
-/* redirect */
-
-RedirectbyLoc("drpdwn", country, lang);
-
-});
-
-});
-
-
-/* ---------------------------
-MOBILE SWITCH
---------------------------- */
-
-function handleLanguageResponsive(){
-
-if(window.innerWidth <= 992){
-
-document.querySelectorAll(".language-block-mobile")
-.forEach(el=>el.style.display="block");
-
-document.querySelectorAll(".language-block:not(.language-block-mobile)")
-.forEach(el=>el.style.display="none");
-
-}
-else{
-
-document.querySelectorAll(".language-block-mobile")
-.forEach(el=>el.style.display="none");
-
-document.querySelectorAll(".language-block:not(.language-block-mobile)")
-.forEach(el=>el.style.display="block");
-
-}
-
-}
-
-handleLanguageResponsive();
-
-window.addEventListener("resize", handleLanguageResponsive);
+// NEW SCRIPT HERE
 
 });
