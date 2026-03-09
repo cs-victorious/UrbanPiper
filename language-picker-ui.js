@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!button || !dropdown) return;
 
-  /* OPEN / CLOSE DROPDOWN */
-
+  /* toggle dropdown */
   button.addEventListener("click", function (e) {
+    e.preventDefault();
     e.stopPropagation();
 
     if (dropdown.style.display === "block") {
@@ -17,10 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  /* CLOSE WHEN CLICK OUTSIDE */
-
+  /* close if clicked outside */
   document.addEventListener("click", function (e) {
-    if (!button.contains(e.target) && !dropdown.contains(e.target)) {
+    if (!dropdown.contains(e.target) && !button.contains(e.target)) {
       dropdown.style.display = "none";
     }
   });
