@@ -6,21 +6,19 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!button || !dropdown) return;
 
   /* toggle dropdown */
+
   button.addEventListener("click", function (e) {
     e.preventDefault();
     e.stopPropagation();
 
-    if (dropdown.style.display === "block") {
-      dropdown.style.display = "none";
-    } else {
-      dropdown.style.display = "block";
-    }
+    dropdown.classList.toggle("active");
   });
 
-  /* close if clicked outside */
+  /* close when clicking outside */
+
   document.addEventListener("click", function (e) {
     if (!dropdown.contains(e.target) && !button.contains(e.target)) {
-      dropdown.style.display = "none";
+      dropdown.classList.remove("active");
     }
   });
 
