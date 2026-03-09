@@ -5,16 +5,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!button || !dropdown) return;
 
-  /* Toggle dropdown */
+  /* OPEN / CLOSE DROPDOWN */
+
   button.addEventListener("click", function (e) {
     e.stopPropagation();
-    dropdown.classList.toggle("active");
+
+    if (dropdown.style.display === "block") {
+      dropdown.style.display = "none";
+    } else {
+      dropdown.style.display = "block";
+    }
   });
 
-  /* Close when clicking outside */
+  /* CLOSE WHEN CLICK OUTSIDE */
+
   document.addEventListener("click", function (e) {
-    if (!dropdown.contains(e.target) && !button.contains(e.target)) {
-      dropdown.classList.remove("active");
+    if (!button.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.style.display = "none";
     }
   });
 
