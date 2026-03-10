@@ -36,12 +36,12 @@ if(url.href.includes('utm_') || url.href.includes('urbanpipervscompetidores') ||
         } else if(url.href.includes('en-sa') || url.href.includes('ar-sa')){
             temploc = 'sa';
         }
-        /**if($('.lpl-c-'+temploc).length > 0){
+        if($('.lpl-c-'+temploc).length > 0){
             var img_src = window.getComputedStyle($('.lpl-c-'+temploc)[0],':before').content;  
                 img_src = img_src.match(/\"(.*?)\"/);
                 $('.language-block').find('img').attr('src',img_src[1]);
-                $('.language-block').find('.language-picker-title').text(lang.toUpperCase());
-        }*/
+                //$('.language-block').find('.language-picker-title').text(lang.toUpperCase());
+        }
         //no redirection
 } 
 else{
