@@ -40,7 +40,7 @@ if(url.href.includes('utm_') || url.href.includes('urbanpipervscompetidores') ||
             var img_src = window.getComputedStyle($('.lpl-c-'+temploc)[0],':before').content;  
                 img_src = img_src.match(/\"(.*?)\"/);
                 $('.language-block').find('img').attr('src',img_src[1]);
-                //$('.language-block').find('.language-picker-title').text(lang.toUpperCase());
+                $('.language-block').find('.language-picker-title').text(lang.toUpperCase());
         }
         //no redirection
 } 
