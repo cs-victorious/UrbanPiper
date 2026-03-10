@@ -826,5 +826,36 @@ function link_is_external(link_element) {
 $(document).ready(function(){
 
 // NEW SCRIPT HERE
+    /* ================================
+   LANGUAGE HOVER BEHAVIOUR
+   ================================ */
+
+$(document).ready(function(){
+
+let hoverTimeout;
+
+/* show language on hover */
+$('.language-picker-list li').on('mouseenter', function(){
+
+    const country = $(this).data('country');
+
+    if(!country) return;
+
+    clearTimeout(hoverTimeout);
+
+    $('.language-col-right').addClass('visible');
+
+});
+
+/* hide language if leaving area */
+$('.language-picker-main').on('mouseleave', function(){
+
+    hoverTimeout = setTimeout(function(){
+        $('.language-col-right').removeClass('visible');
+    },120);
+
+});
+
+});
 
 });
