@@ -703,27 +703,8 @@ jQuery(document).ready(function($){
             var country = getWithExpiry('country') ? getWithExpiry('country') : '';
             var lang = getWithExpiry('lang') ? getWithExpiry('lang') : '';
     
-      jQuery(document).on('click', 'a', function(e){
-
-    const href = jQuery(this).attr('href');
-
-    // ✅ 1. Allow anchor links for blogs
-    if (href && href.startsWith('#')) {
-        return;
-    }
-
-    // ✅ 2. Allow empty / dummy links
-    if (!href || href === '#' || href === '/#') {
-        return;
-    }
-
-    // ✅ 3. Allow external links
-    if (this.hostname !== window.location.hostname) {
-        return;
-    }
-
-    // 🚫 ONLY now intercept (internal routing logic)
-    e.preventDefault();
+            jQuery(document).on('click', 'a', function(e){
+                e.preventDefault();
                 var url_from = new URL(window.location.href);
                 var url_to = ''; var backlink = '';
                 if(new RegExp("[a-zA-Z0-9]+://([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?").test(jQuery(this).attr('href'))) {
