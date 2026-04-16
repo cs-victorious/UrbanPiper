@@ -703,8 +703,16 @@ jQuery(document).ready(function($){
             var country = getWithExpiry('country') ? getWithExpiry('country') : '';
             var lang = getWithExpiry('lang') ? getWithExpiry('lang') : '';
     
-            jQuery(document).on('click', 'a', function(e){
-                e.preventDefault();
+           jQuery(document).on('click', 'a', function(e){
+
+    const href = jQuery(this).attr('href');
+
+    // ✅ FIX: allow anchor links to behave normally
+    if (href && href.startsWith('#')) {
+        return; // DO NOT block default behavior
+    }
+
+    e.preventDefault();
                 var url_from = new URL(window.location.href);
                 var url_to = ''; var backlink = '';
                 if(new RegExp("[a-zA-Z0-9]+://([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?").test(jQuery(this).attr('href'))) {
