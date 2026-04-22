@@ -37,7 +37,7 @@ if(url.href.includes('utm_') || url.href.includes('urbanpipervscompetidores') ||
             temploc = 'sa';
         }
         if($('.lpl-c-'+temploc).length > 0){
-            var img_src = window.getComputedStyle($('.lpl-c-'+temploc)[0],':before').content;  
+            var img_src = window?.getComputedStyle($('.lpl-c-'+temploc)[0],':before').content;  
                 img_src = img_src.match(/\"(.*?)\"/);
                 $('.language-block').find('img').attr('src',img_src[1]);
                 $('.language-block').find('.language-picker-title').text(lang.toUpperCase());
@@ -113,7 +113,7 @@ function RedirectbyLoc(source = '', country = '', lang = ''){
          */
 
         if($('.lpl-c-'+temploc).length > 0){
-            var img_src = window.getComputedStyle($('.lpl-c-'+temploc)[0],':before').content;  
+            var img_src = window?.getComputedStyle($('.lpl-c-'+temploc)[0],':before').content;  
                 img_src = img_src.match(/\"(.*?)\"/);
                 $('.language-block').find('img').attr('src',img_src[1]);
                 $('.language-block').find('.language-picker-title').text(lang.toUpperCase());
@@ -691,7 +691,7 @@ jQuery(document).ready(function($){
             temploc = 'sa';
         }
         if($('.lpl-c-'+temploc).length > 0){
-            var img_src = window.getComputedStyle($('.lpl-c-'+temploc)[0],':before').content;  
+            var img_src = window?.getComputedStyle($('.lpl-c-'+temploc)[0],':before').content;  
                 img_src = img_src.match(/\"(.*?)\"/);
                 $('.language-block').find('img').attr('src',img_src[1]);
                 $('.language-block').find('.language-picker-title').text(lang.toUpperCase());
@@ -744,7 +744,7 @@ jQuery(document).ready(function($){
                             }
     
                             if($('.lpl-c-'+temploc).length > 0){
-                                var img_src = window.getComputedStyle($('.lpl-c-'+temploc)[0],':before').content;  
+                                var img_src = window?.getComputedStyle($('.lpl-c-'+temploc)[0],':before').content;  
                                     img_src = img_src.match(/\"(.*?)\"/);
                                     $('.language-block').find('img').attr('src',img_src[1]);
                                     $('.language-block').find('.language-picker-title').text(lang.toUpperCase());
